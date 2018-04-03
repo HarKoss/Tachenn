@@ -1,39 +1,36 @@
 package fl.tachenn.controller;
 
-import javax.swing.JPanel;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Component;
 
 import fl.tachenn.model.DocumentModel;
-import fl.tachenn.ui.ConsultPanel;
-import fl.tachenn.ui.StartMenuPanel;
 import fl.tachenn.ui.TachennFrame;
 
+@Component
 public class TachennController {
 	
+	@Resource(name="tachennFrame")
 	private TachennFrame tachennFrame;
-	private JPanel currentPanel;
+	
+	@Resource(name="consultController")
+	private ConsultController consultController;
+	
+	@Resource(name="startMenuController")
+	private StartMenuController startMenuController;
 
-	public TachennController(TachennFrame frame) {
-		tachennFrame = frame;
+	public void init() {
 		tachennFrame.init();
+		this.openStartMenuPerspective();
 	}
 
 	public void openStartMenuPerspective() {
-		StartMenuPanel menuPanel = new StartMenuPanel();
-		StartMenuController menuController = new StartMenuController(menuPanel, this);
-		reloadPanel(menuPanel);
+		startMenuController.init();
+		tachennFrame.showStartMenu();
 	}
 
 	public void openConsultPerspective(DocumentModel doc) {
-		ConsultPanel consultPanel = new ConsultPanel();
-		ConsultController consultController = new ConsultController(consultPanel, doc, this);
-		reloadPanel(consultPanel);
-	}
-	
-	private void reloadPanel(JPanel newPanel) {
-		if (currentPanel != null) {
-			tachennFrame.remove(currentPanel);
-		}
-		currentPanel = newPanel;
-		tachennFrame.add(newPanel);
+		consultController.init(doc);
+		tachennFrame.showConsultPanel();
 	}
 }

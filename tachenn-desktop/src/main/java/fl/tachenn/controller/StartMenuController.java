@@ -2,31 +2,28 @@ package fl.tachenn.controller;
 
 import java.io.File;
 
+import javax.annotation.Resource;
 import javax.swing.JFileChooser;
-import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import fl.tachenn.model.DocumentModel;
 import fl.tachenn.ui.StartMenuPanel;
 
+@Component
 public class StartMenuController {
-	
-	StartMenuPanel startMenuPanel;
-	JPanel previousPanel;
-	
-	TachennController tachennController;
 
-	public StartMenuController(StartMenuPanel panel, TachennController tachennController) {
-		startMenuPanel = panel;
-		this.tachennController = tachennController;
-		initListenner();
-	}
+	@Resource(name="startMenuPanel")
+	private StartMenuPanel startMenuPanel;
 	
-	private void initListenner() {
+	@Resource(name="tachennController")
+	private TachennController tachennController;
+
+	public void init() {
+		startMenuPanel.init();
 		startMenuPanel.getOpenFileButton().addActionListener(i -> showOpenDialogue());
 	}
 
