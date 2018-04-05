@@ -24,17 +24,18 @@ public class TachennFrame extends JFrame {
 	public void init() {		
 		this.setTitle("Tachenn Desktop");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(200,200);
+		this.setSize(400,400);
 		this.setBackground(Color.red);
 		this.setLocationRelativeTo(null);
-		this.setVisible(true);
 	}
 	public void showStartMenu() {
 		this.switchPanel(menuPanel);
+		this.setVisible(true);
 	}
 
 	public void showConsultPanel() {
 		this.switchPanel(consultPanel);
+		this.setVisible(true);
 	}
 	
 	public void switchPanel(JPanel newPanel) {
