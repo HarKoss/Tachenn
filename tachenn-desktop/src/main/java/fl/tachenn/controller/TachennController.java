@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Component;
 
 import fl.tachenn.model.DocumentModel;
+import fl.tachenn.service.ODSUtils;
 import fl.tachenn.ui.TachennFrame;
 
 @Component
@@ -19,6 +20,9 @@ public class TachennController {
 	@Resource(name="startMenuController")
 	private StartMenuController startMenuController;
 
+	@Resource(name="ODSUtils")
+	private ODSUtils oDSUtils;
+	
 	public void init() {
 		tachennFrame.init();
 		this.openStartMenuPerspective();
@@ -31,6 +35,7 @@ public class TachennController {
 
 	public void openConsultPerspective(DocumentModel doc) {
 		consultController.init(doc);
+		oDSUtils.getDocPreview(doc, 10, 10);
 		tachennFrame.showConsultPanel();
 	}
 }

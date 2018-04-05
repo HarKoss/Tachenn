@@ -39,7 +39,7 @@ public class StartMenuController {
 	        DocumentModel doc = new DocumentModel();
 	        doc.setName(file.getName());
 	        doc.setAbsolutePath(file.getAbsolutePath());
-	        doc.setFile(openFile.getCurrentDirectory());
+	        doc.setFile(file);
 	        openConsultPanel(doc);
         }
 	}
