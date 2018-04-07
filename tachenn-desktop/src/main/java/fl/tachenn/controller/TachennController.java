@@ -5,9 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Component;
 
 import fl.tachenn.model.DocumentModel;
-import fl.tachenn.service.ODSUtils;
 import fl.tachenn.ui.TachennFrame;
-import fl.tachenn.worker.PreviewWorker;
 
 @Component
 public class TachennController {

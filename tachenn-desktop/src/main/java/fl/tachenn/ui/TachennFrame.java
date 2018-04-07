@@ -40,10 +40,11 @@ public class TachennFrame extends JFrame {
 	
 	public void switchPanel(JPanel newPanel) {
 		if (currentPanel != null) {
+			currentPanel.setVisible(false);
 			this.remove(consultPanel);
 		}
 		currentPanel = newPanel;
+		currentPanel.setVisible(true);
 		this.add(newPanel);
-        //TODO fix: can't display the second panel
 	}
 }

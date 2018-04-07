@@ -89,4 +89,11 @@ public class StartMenuPanel extends JPanel {
 		this.openFileButton = openFileButton;
 	}
 
+	public JButton getOtherButton() {
+		return otherButton;
+	}
+
+	public void setOtherButton(JButton otherButton) {
+		this.otherButton = otherButton;
+	}
 }

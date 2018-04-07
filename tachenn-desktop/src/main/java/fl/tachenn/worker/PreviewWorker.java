@@ -14,6 +14,7 @@ public class PreviewWorker extends SwingWorker<Integer, String> {
 	private DocumentModel document;
 	
 	public PreviewWorker(DocumentModel document) {
+		super();
 		this.document = document;
 	}
 	

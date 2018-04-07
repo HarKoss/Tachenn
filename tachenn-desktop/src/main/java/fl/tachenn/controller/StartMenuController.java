@@ -25,6 +25,7 @@ public class StartMenuController {
 	public void init() {
 		startMenuPanel.init();
 		startMenuPanel.getOpenFileButton().addActionListener(i -> showOpenDialogue());
+		startMenuPanel.getOtherButton().addActionListener(i -> showOtherThing());
 	}
 
 	private void showOpenDialogue() {
@@ -42,6 +43,16 @@ public class StartMenuController {
 	        doc.setFile(file);
 	        openConsultPanel(doc);
         }
+	}
+	
+	private void showOtherThing() {
+		//TODO remove testing code
+		/*File file = new File("ODF_TEST.ods");
+		DocumentModel doc = new DocumentModel();
+        doc.setName(file.getName());
+        doc.setAbsolutePath(file.getAbsolutePath());
+        doc.setFile(file);
+        openConsultPanel(doc);*/
 	}
 	
 	public void openConsultPanel(DocumentModel doc) {

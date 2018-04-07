@@ -21,7 +21,6 @@ public class ConsultController {
 	private DocumentModel document;
 	
 	public void init(DocumentModel doc) {
-		panel.init();
 		document = doc;	
 		launchWorker();
 	}
@@ -33,7 +32,7 @@ public class ConsultController {
 			@Override
 			protected void done(){
 				// Executed in EDT when work is done
-				//panel.addTable();
+				panel.init(document);
 			}
 		};
 		/* // To listen the setProgress(int) from doInBackground()

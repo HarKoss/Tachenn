@@ -1,7 +1,6 @@
 package fl.tachenn.service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.odftoolkit.simple.SpreadsheetDocument;
@@ -16,8 +15,8 @@ import fl.tachenn.model.TableModel;
 public class ODSUtils {
 
 	private static final int PREVIEW_TABLE_NUMBER = 5;
-	private static final int PREVIEW_ROW_NUMBER = 100;
-	private static final int PREVIEW_COLOMN_NUMBER = 100;
+	private static final int PREVIEW_ROW_NUMBER = 30;
+	private static final int PREVIEW_COLOMN_NUMBER = 40;
 	
 
 	public void retriveDocPreview(DocumentModel doc, int nRow, int nColumn) {
