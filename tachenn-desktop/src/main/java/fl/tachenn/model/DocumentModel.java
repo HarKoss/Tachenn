@@ -1,14 +1,14 @@
 package fl.tachenn.model;
 
 import java.io.File;
-import java.util.List;
+import java.util.Map;
 
 public class DocumentModel {
 
 	private String Name;
 	private String absolutePath;
 	private File file;
-	private List<TableModel> tableList;
+	private Map<String, TableModel> tableMap;
 	private int tableCount;
 	
 	public String getName() {
@@ -29,11 +29,11 @@ public class DocumentModel {
 	public void setFile(File file) {
 		this.file = file;
 	}
-	public List<TableModel> getTableList() {
-		return tableList;
+	public Map<String, TableModel> getTableList() {
+		return tableMap;
 	}
-	public void setTableList(List<TableModel> tableList) {
-		this.tableList = tableList;
+	public void setTableList(Map<String, TableModel> tableList) {
+		this.tableMap = tableList;
 	}
 	public int getTableCount() {
 		return tableCount;

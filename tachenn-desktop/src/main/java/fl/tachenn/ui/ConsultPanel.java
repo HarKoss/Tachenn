@@ -25,7 +25,7 @@ public class ConsultPanel extends JPanel {
 		this.setLayout(new GridLayout(1, 1));
 		
 		previewTabs = new JTabbedPane();
-		for(TableModel tableModel : doc.getTableList()) {
+		for(TableModel tableModel : doc.getTableList().values()) {
 			PreviewTable previewTable = new PreviewTable(tableModel.getRowList(), tableModel.getRowList()[0]);
 			previewTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 			JScrollPane scrollPane = new JScrollPane(previewTable,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);

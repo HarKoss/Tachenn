@@ -20,7 +20,8 @@ public class PreviewWorker extends SwingWorker<Integer, String> {
 	
 	@Override
 	protected Integer doInBackground() throws Exception {
-		oDSUtils.retriveDocPreview(document, 10, 10);
+		oDSUtils.retriveDocumentDescription(document);
+		oDSUtils.retriveDocPreview(document);
 		
 	 	// could add setProgress(int progress) wich can be read from panel with addPropertyChangeListener(PropertyChangeListener listener)
 		// publish(String) could be retrieved as chunk from process(List<String> chunks)

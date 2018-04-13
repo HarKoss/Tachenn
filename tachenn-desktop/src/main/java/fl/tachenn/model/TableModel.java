@@ -4,6 +4,7 @@ public class TableModel {
 
 	private String Name;
 	private String[][] rowList;
+	private String[] headerList;
 	private int rowCount;
 	private int columnCount;
 	
@@ -18,6 +19,12 @@ public class TableModel {
 	}
 	public void setRowList(String[][] rowList) {
 		this.rowList = rowList;
+	}
+	public String[] getHeaderList() {
+		return headerList;
+	}
+	public void setHeaderList(String[] headerList) {
+		this.headerList = headerList;
 	}
 	public int getRowCount() {
 		return rowCount;

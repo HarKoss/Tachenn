@@ -26,7 +26,6 @@ public class ConsultController {
 	}
 	
 	private void launchWorker() {
-		//oDSUtils.retriveDocPreview(document, 10, 10);
 		// replaced by 
 		PreviewWorker worker = new PreviewWorker(document) {
 			@Override
